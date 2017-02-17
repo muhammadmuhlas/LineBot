@@ -577,7 +577,7 @@ class Response
 
 								// $response = $this->botSendText($event, "haloo");
 
-								$response = $this->bot->replyText($event['replyToken'], $this->botEventReplyToken($event));
+								$response = $this->bot->replyText($event['replyToken'], json_encode($event));
 							}
 						}
 						return $response->getHTTPStatus() . ' ' . $response->getRawBody();
