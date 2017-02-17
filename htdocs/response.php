@@ -1,6 +1,7 @@
 <?php
 
 use \LINE\LINEBot\SignatureValidator as SignatureValidator;
+use \LINE\LINEBot\MessageBuilder\TextMessageBuilder as TextMessageBuilder;
 
 class Response
 {
@@ -577,12 +578,8 @@ class Response
 
 								// $response = $this->botSendText($event, "haloo");
 
-								$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello');
+								$textMessageBuilder = new TextMessageBuilder('hello');
 								$response = $bot->replyMessage($this->botEventReplyToken($event), $textMessageBuilder);
-								if ($response->isSucceeded()) {
-									echo 'Succeeded!';
-									return;
-								}
 
 								// $response = $this->bot->replyText($event['replyToken'], json_encode($event));
 							}
