@@ -46,8 +46,7 @@ class Response
 
 	public function botEventsRequestHandler(){
 
-		$requestHandler = json_decode($this->request, true);
-		return $requestHandler['events'];
+		$getRequest = json_decode($this->request, true);
 	}
 
 /* Bot Usability | Every method can only be used trough foreach */
@@ -482,9 +481,9 @@ class Response
 
 	public function eventsHandler(){
 
-		$getRequest = botEventsRequestHandler();
+		$getRequest = $this->botEventsRequestHandler;
 
-		foreach ($getRequest['events'] as $event){
+		foreach ($getRequest as $event){
 
 			if(strpos($event['message']['text'], 'bye dwabot') !== false){
 
