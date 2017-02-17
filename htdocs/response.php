@@ -579,7 +579,7 @@ class Response
 								// $response = $this->botSendText($event, "haloo");
 
 								$textMessageBuilder = new TextMessageBuilder('hello');
-								$response = $bot->replyMessage($this->botEventReplyToken($event), $textMessageBuilder);
+								$response = $bot->replyMessage($this->botEventReplyToken($event), $event['message']['text']);
 
 								// $response = $this->bot->replyText($event['replyToken'], json_encode($event));
 							}
