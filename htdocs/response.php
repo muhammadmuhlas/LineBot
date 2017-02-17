@@ -577,7 +577,14 @@ class Response
 
 								// $response = $this->botSendText($event, "haloo");
 
-								$response = $this->bot->replyText($event['replyToken'], json_encode($event));
+								$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello');
+								$response = $bot->replyMessage($this->botEventReplyToken($event), $textMessageBuilder);
+								if ($response->isSucceeded()) {
+									echo 'Succeeded!';
+									return;
+								}
+
+								// $response = $this->bot->replyText($event['replyToken'], json_encode($event));
 							}
 						}
 						return $response->getHTTPStatus() . ' ' . $response->getRawBody();
