@@ -571,7 +571,7 @@ class Response
 
 							if (preg_match($dirtyWord, $event['message']['text'])) {
 
-								$response = $this->botSendText($source, "haloo");
+								$response = $this->botSendText($event, "haloo");
 
 								// $response = $this->bot->replyText($event['replyToken'], "Astaghfirullahaladzim, jangan berkata kotor :(");
 							}
