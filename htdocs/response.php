@@ -482,7 +482,7 @@ class Response
 
 	public function eventsHandler(){
 
-		$getRequest = $this->botEventsRequestHandler;
+		$getRequest = botEventsRequestHandler();
 
 		foreach ($getRequest['events'] as $event){
 
