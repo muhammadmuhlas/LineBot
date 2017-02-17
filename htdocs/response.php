@@ -47,6 +47,7 @@ class Response
 	public function botEventsRequestHandler(){
 
 		$getRequest = json_decode($this->request, true);
+		return $getRequest['events'];
 	}
 
 /* Bot Usability | Every method can only be used trough foreach */
