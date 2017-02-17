@@ -218,11 +218,6 @@ class Response
 
 		$input = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($text);
 		$response = $bot->replyMessage($this->botEventReplyToken($event), $input);
-
-		if ($response->isSucceeded()){
-
-			return $response->getHTTPStatus() . ' ' . $response->getRawBody();
-		}
 	}
 
 	public function botSendImage($event, $original, $preview){
